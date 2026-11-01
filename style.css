@@ -1,0 +1,432 @@
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+
+:root {
+  --bg: #100e20;
+  --panel: #211b32;
+  --pink: #ffb4d0;
+  --purple: #d7adff;
+  --white: #fff6fb;
+  --muted: #c8bfd5;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--white);
+  font-family: "DM Sans", sans-serif;
+  background:
+    radial-gradient(ellipse at 50% 0%, #432444 0%, transparent 52%),
+    radial-gradient(ellipse at 100% 100%, #241b41 0%, transparent 45%),
+    var(--bg);
+  overflow-x: hidden;
+}
+
+button {
+  font-family: inherit;
+}
+
+.stars,
+.hearts {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.star {
+  position: absolute;
+  color: #ffe1ef;
+  animation: twinkle 3s ease-in-out infinite alternate;
+}
+
+.floating-heart {
+  position: absolute;
+  bottom: -40px;
+  color: var(--pink);
+  animation: rise 9s linear forwards;
+  opacity: 0;
+}
+
+main {
+  position: relative;
+  z-index: 1;
+}
+
+.screen {
+  display: none;
+  min-height: 88vh;
+  padding: 85px 20px 45px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.screen.active {
+  display: flex;
+  animation: appear 0.8s ease both;
+}
+
+h1 {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(2.3rem, 7vw, 4.5rem);
+  font-weight: 600;
+  line-height: 1.15;
+  max-width: 900px;
+  margin: 16px 0;
+}
+
+h1 span {
+  color: var(--pink);
+}
+
+.eyebrow {
+  color: var(--pink);
+  font-size: 0.73rem;
+  letter-spacing: 0.2em;
+  font-weight: 700;
+  line-height: 1.7;
+}
+
+.subtitle {
+  color: var(--muted);
+  max-width: 570px;
+  margin: 18px auto 26px;
+  font-size: 1rem;
+  line-height: 1.9;
+}
+
+.glow {
+  font-size: 4rem;
+  color: var(--pink);
+  text-shadow: 0 0 25px #ffabc9, 0 0 65px #ffabc955;
+  animation: float 3s ease-in-out infinite;
+}
+
+.tiny-heart {
+  font-size: 2rem;
+  color: var(--pink);
+  margin: 8px;
+  animation: pulse 2s infinite;
+}
+
+.primary,
+.secondary,
+.music-btn {
+  cursor: pointer;
+  border-radius: 999px;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.primary {
+  border: 1px solid #ffffff55;
+  background: linear-gradient(120deg, var(--pink), var(--purple));
+  color: #29152e;
+  font-weight: 700;
+  font-size: 0.94rem;
+  padding: 15px 24px;
+  margin: 12px 0;
+  box-shadow: 0 8px 30px #e9a9ff20;
+}
+
+.secondary {
+  background: transparent;
+  color: var(--white);
+  border: 1px solid #ffb4d066;
+  padding: 12px 22px;
+  margin: 8px;
+}
+
+.primary:hover,
+.secondary:hover {
+  transform: translateY(-3px);
+}
+
+button:focus-visible {
+  outline: 3px solid white;
+  outline-offset: 4px;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+.music-btn {
+  position: fixed;
+  z-index: 10;
+  top: 15px;
+  right: 14px;
+  color: var(--white);
+  background: #211b32eF;
+  border: 1px solid #ffb4d055;
+  padding: 10px 15px;
+  font-size: 0.8rem;
+}
+
+.tiny {
+  color: #a9a0b8;
+  font-size: 0.78rem;
+  margin-top: 20px;
+  line-height: 1.8;
+}
+
+.birthday-icon {
+  font-size: clamp(4rem, 15vw, 7rem);
+  margin: 18px;
+  animation: float 3s ease-in-out infinite;
+}
+
+.wish-card {
+  max-width: 520px;
+  width: 100%;
+  padding: 20px 24px;
+  border: 1px solid #ffb4d044;
+  border-radius: 20px;
+  background: linear-gradient(140deg, #ffffff0b, #ffb4d009);
+  margin: 14px 0 22px;
+  line-height: 1.85;
+  color: #e5dbea;
+}
+
+.wish-card > span {
+  font-size: 1.6rem;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+  width: min(100%, 940px);
+  margin: 25px auto;
+  align-items: start;
+}
+
+.photo-card {
+  background: #fff5ef;
+  color: #38273b;
+  padding: 12px 12px 18px;
+  border-radius: 5px;
+  transform: rotate(-2deg);
+  box-shadow: 0 12px 35px #0004;
+  transition: transform 0.3s ease;
+}
+
+.photo-card:nth-child(2) {
+  transform: rotate(2deg) translateY(12px);
+}
+
+.photo-card:nth-child(3) {
+  transform: rotate(-1deg);
+}
+
+.photo-card:hover {
+  transform: rotate(0) translateY(-5px);
+}
+
+.photo-frame {
+  width: 100%;
+  height: 260px;
+  overflow: hidden;
+  background: #e8dce9;
+}
+
+.photo-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.photo-card p {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 0.94rem;
+  line-height: 1.6;
+  margin: 15px 4px 2px;
+}
+
+.gallery-note {
+  color: var(--muted);
+  font-size: 0.88rem;
+  line-height: 1.8;
+  margin: 10px 0;
+}
+
+.letter {
+  max-width: 700px;
+  width: 100%;
+  text-align: left;
+  line-height: 1.95;
+  padding: clamp(24px, 6vw, 48px);
+  margin: 20px 0;
+  border: 1px solid #ffb4d044;
+  border-radius: 22px;
+  background: linear-gradient(145deg, #29213aee, #171423f5);
+  box-shadow: 0 20px 70px #0002;
+  color: #e7deeb;
+}
+
+.letter h1 {
+  font-size: clamp(2rem, 6vw, 3rem);
+  color: var(--pink);
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.letter-icon {
+  text-align: center;
+  font-size: 2.5rem;
+}
+
+.signature {
+  color: var(--pink);
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 1.05rem;
+  margin-top: 30px;
+}
+
+.final-message {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 1.1rem;
+}
+
+footer {
+  position: relative;
+  z-index: 1;
+  padding: 20px;
+  text-align: center;
+  color: #9f94ad;
+  font-size: 0.78rem;
+  line-height: 1.8;
+}
+
+.footer-heart {
+  display: block;
+  color: var(--pink);
+  margin-top: 4px;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+}
+
+@keyframes twinkle {
+  from { opacity: 0.15; transform: scale(0.8); }
+  to { opacity: 0.9; transform: scale(1.2); }
+}
+
+@keyframes rise {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0;
+  }
+  10% { opacity: 0.8; }
+  90% { opacity: 0.6; }
+  100% {
+    transform: translateY(-115vh) rotate(35deg);
+    opacity: 0;
+  }
+}
+
+@media (max-width: 700px) {
+  .screen {
+    min-height: 85vh;
+    padding: 82px 17px 35px;
+  }
+
+  .gallery {
+    grid-template-columns: 1fr;
+    max-width: 360px;
+    gap: 24px;
+  }
+
+  .photo-frame {
+    height: 320px;
+  }
+
+  .photo-card,
+  .photo-card:nth-child(2),
+  .photo-card:nth-child(3) {
+    transform: rotate(-1deg);
+  }
+
+  .subtitle {
+    font-size: 0.94rem;
+  }
+
+  .letter {
+    padding: 25px 21px;
+  }
+
+  .wish-card {
+    padding: 18px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+#lockScreen {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+#birthdayPassword {
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid pink;
+  margin: 12px;
+  max-width: 90%;
+}
+
+#lockScreen button {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  background: pink;
+}
+
+#passwordMessage {
+  color: #d63384;
+}

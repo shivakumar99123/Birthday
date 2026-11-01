@@ -1,0 +1,271 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#100e20" />
+  <meta name="description" content="A little birthday surprise made especially for Aleena." />
+  <title>For Dear Aleena 🤍</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  
+<div id="lockScreen">
+  <h1>❤️ A Little Surprise for You ❤️</h1>
+  <p>Only someone special knows the secret!</p>
+
+  <input
+    type="password"
+    id="birthdayPassword"
+    placeholder="Enter your secret password"
+  />
+
+  <button onclick="unlockWebsite()">Open My Surprise 💖</button>
+
+  <p id="passwordMessage"></p>
+</div>
+
+<div id="birthdayContent" style="display: none;">
+  <!-- Keep all your existing birthday website content here -->
+</div>
+
+  <audio id="music" loop preload="none">
+    <source src="assets/dear-song.mp3" type="audio/mpeg" />
+  </audio>
+
+  <div class="stars" id="stars"></div>
+  <div class="hearts" id="hearts"></div>
+
+  <button id="musicBtn" class="music-btn" aria-label="Play background music">
+    ♪ Music off
+  </button>
+
+  <main>
+    <!-- 1. Welcome screen -->
+    <section id="welcome" class="screen active">
+      <div class="glow">✦</div>
+      <p class="eyebrow">A LITTLE WORLD MADE JUST FOR YOU</p>
+
+      <h1>Hey, <span>Dear</span> 🤍</h1>
+
+      <p class="subtitle">
+        Someone very special was born on a day
+        the world probably didn't know it was becoming
+        a little more beautiful.
+      </p>
+
+      <div class="tiny-heart">♡</div>
+
+      <button class="primary" id="openBtn">
+        Open your little surprise ✨
+      </button>
+
+      <p class="tiny">Made with a little extra love and care.</p>
+    </section>
+
+    <!-- 2. Birthday greeting -->
+    <section id="birthday" class="screen">
+      <p class="eyebrow">5 NOVEMBER 2026</p>
+
+      <h1 class="big-title">
+        Happy Birthday,<br />
+        <span>Dear Aleena!</span>
+      </h1>
+
+      <div class="birthday-icon">🎂</div>
+
+      <p class="subtitle">
+        Today, I hope the happiness you give to others
+        finds its way back to you in a thousand beautiful ways.
+      </p>
+
+      <div class="wish-card">
+        <span>🌷</span>
+        <p>
+          May this new chapter of your life bring you
+          beautiful surprises, peaceful days, and dreams
+          that slowly become reality.
+        </p>
+      </div>
+
+      <button class="primary" data-next="memories">
+        Let's revisit our memories 📸
+      </button>
+    </section>
+
+    <!-- 3. Photo memories -->
+    <section id="memories" class="screen">
+      <p class="eyebrow">LITTLE MOMENTS, BIG MEMORIES</p>
+
+      <h1>Dear, remember these? 💗</h1>
+
+      <p class="subtitle">
+        The little moments that became big memories.
+        Maybe ordinary days, but never ordinary to me.
+      </p>
+
+      <div class="gallery" id="photoGallery"></div>
+          <p>A little memory that still makes me smile. ✨</p>
+        </article>
+
+        <article class="photo-card">
+          <div class="photo-frame">
+            <img
+              src="assets/photo3.jpg"
+              alt="Another special moment"
+              loading="lazy"
+            />
+          </div>
+          <p>Some moments are special because of the people in them.</p>
+        </article>
+      </div>
+
+      <p class="gallery-note">
+        More than pictures, these are little pieces of time
+        worth keeping.
+      </p>
+
+      <button class="primary" data-next="letter">
+        One little thing from my heart 💌
+      </button>
+    </section>
+
+    <!-- 4. Emotional birthday letter -->
+    <section id="letter" class="screen">
+      <p class="eyebrow">WORDS I WANT YOU TO KEEP</p>
+
+      <div class="letter">
+        <div class="letter-icon">💌</div>
+
+        <h1>For You, Dear</h1>
+
+        <p>Hey Aleena,</p>
+
+        <p>Happy birthday, Dear. 🤍</p>
+
+        <p>
+          I don't think a few paragraphs could ever explain
+          how much happiness a person can bring into someone's
+          life simply by being herself.
+        </p>
+
+        <p>
+          Some of my favourite memories aren't necessarily
+          the biggest moments. Sometimes, they're the little
+          conversations, the random laughs, the silly things,
+          and the moments that probably seemed ordinary at the time.
+        </p>
+
+        <p>
+          But somehow, those little moments became memories
+          worth keeping. And I'm genuinely grateful that
+          I got to share some of them with you.
+        </p>
+
+        
+
+        <p>
+          You never have to do anything extraordinary to be
+          someone worth appreciating. Being yourself is already
+          something beautiful.
+        </p>
+        <p>
+  Somewhere along the way, you became someone whose presence
+  means more to me than I can properly put into words.Maybe the timing was wrong ,may be the 
+  feelings were one sided,or maybe some people are meant to be memories
+  rather than forever.
+</p>
+
+<p>
+  You have a special place in my world, not because you try
+  to be extraordinary, but simply because you're you.
+</p>
+
+<p>
+  Even the smallest conversations with you can become
+  moments I find myself smiling about later.
+</p>
+
+<p>
+  Your happiness genuinely matters to me, and seeing you smile
+  is one of those little things that can brighten my day.
+</p>
+
+<p>
+  I may not always find the right words to express it,
+  but I'm truly grateful to have you in my life.
+</p>
+
+<p>
+  If there's one thing I hope you never doubt, it's that
+  you deserve all the kindness, happiness, and beautiful
+  moments this world has to offer.
+</p>
+
+
+        <p>
+          And if there's one thing I wish for you, it's this:
+          may life be gentle with your heart, may happiness
+          find you even on difficult days, and may you never
+          forget how much good you can bring into the world.
+        </p>
+
+        <p>
+          Thank you for being part of some moments that
+          became special memories for me.
+        </p>
+
+        <p class="signature">
+          Happy birthday once again, Dear. 🌷<br />
+          Keep smiling, keep shining, and keep being you.
+        </p>
+      </div>
+
+      <button class="primary" data-next="finale">
+        One last little surprise 🎁
+      </button>
+    </section>
+
+    <!-- 5. Final birthday surprise -->
+    <section id="finale" class="screen">
+      <div class="glow">✧</div>
+      <div class="birthday-icon">🎉</div>
+
+      <p class="eyebrow">A WISH JUST FOR YOU</p>
+
+      <h1>You deserve a beautiful year, Dear.</h1>
+
+      <p class="subtitle">
+        May your worries become lighter, your dreams grow bigger,
+        and your days be filled with reasons to smile.
+      </p>
+
+      <div class="wish-card final-card">
+        <p class="final-message">
+          If life ever feels difficult, I hope you remember
+          that beautiful days are still waiting for you.
+          Never stop being the wonderful person you are. 🤍
+        </p>
+      </div>
+
+      <button class="primary" id="confettiBtn">
+        Make one more wish 🌠
+      </button>
+
+      <button class="secondary" id="restartBtn">
+        Relive the surprise ↻
+      </button>
+
+      <p class="tiny">Happy Birthday, Aleena. Always keep shining. ♡</p>
+    </section>
+  </main>
+
+  <footer>
+    <span>Made with care, especially for Dear Aleena</span>
+    <span class="footer-heart">♥</span>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
